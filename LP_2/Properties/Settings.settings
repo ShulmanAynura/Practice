@@ -6,7 +6,7 @@
       <Value Profile="(Default)">tomitaparser.exe</Value>
     </Setting>
     <Setting Name="SourceFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Tomita</Value>
+      <Value Profile="(Default)">../../Tomita</Value>
     </Setting>
   </Settings>
 </SettingsFile>

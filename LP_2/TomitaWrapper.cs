@@ -12,23 +12,26 @@ namespace LP_2
     {
         static public void FindFact(String inputName, String grammName)
         {
-            
+
             var startInfo = new ProcessStartInfo
             {
                 //имя файла
                 FileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                                        Path.Combine(Properties.Settings.Default.SourceFolder,
-                                                Properties.Settings.Default.TomitaFileName)),
+                                            Path.Combine(Properties.Settings.Default.SourceFolder,
+                                                    Properties.Settings.Default.TomitaFileName)),
+                                                    
+                
                 //скрытое окно
                 //WindowStyle = ProcessWindowStyle.Hidden,
                 //ваши аргументы
-               Arguments = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+                Arguments = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                         Path.Combine(Properties.Settings.Default.SourceFolder, "config.proto"))
             };
             //запуск процесса
+            
             startInfo.WorkingDirectory = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                        Properties.Settings.Default.SourceFolder);
-
+            //startInfo.WorkingDirectory = Properties.Settings.Default.SourceFolder;
             String oldInputPath = Path.Combine(startInfo.WorkingDirectory, "input.txt");
             String oldGrammPath = Path.Combine(startInfo.WorkingDirectory, "first.cxx");
             String newInputPath = Path.Combine(startInfo.WorkingDirectory, inputName);
