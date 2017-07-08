@@ -36,5 +36,19 @@ namespace LP_2
                 sr.Close();
             }
         }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+
+            richTextBox1.Width = Form1.ActiveForm.Width / 2-15;
+            richTextBox2.Width = Form1.ActiveForm.Width / 2-15;
+          
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            richTextBox1.Width = Form1.ActiveForm.Width / 2 - 15;
+            richTextBox2.Width = Form1.ActiveForm.Width / 2 - 15;
+        }
     }
 }
