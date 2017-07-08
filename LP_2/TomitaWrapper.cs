@@ -10,8 +10,9 @@ namespace LP_2
 {
     class TomitaWrapper
     {
-        public void FindFact()
+        static public void FindFact(String inputName, String grammName)
         {
+            
             var startInfo = new ProcessStartInfo
             {
                 //имя файла
@@ -27,20 +28,29 @@ namespace LP_2
             //запуск процесса
             startInfo.WorkingDirectory = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                        Properties.Settings.Default.SourceFolder);
+
+            String oldInputPath = Path.Combine(startInfo.WorkingDirectory, "input.txt");
+            String oldGrammPath = Path.Combine(startInfo.WorkingDirectory, "first.cxx");
+            String newInputPath = Path.Combine(startInfo.WorkingDirectory, inputName);
+            String newGrammPath = Path.Combine(startInfo.WorkingDirectory, grammName);
+            String outputPath = Path.Combine(startInfo.WorkingDirectory, "output.txt"); 
+            File.Copy(newInputPath, oldInputPath,true);
+            File.Copy(newGrammPath, oldGrammPath,true);
+            File.Delete(outputPath);
             startInfo.UserName = null;
             //Process.Start(startInfo);
 
-            string f = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+         /*   string f = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                         Path.Combine(Properties.Settings.Default.SourceFolder,
                                                 Properties.Settings.Default.TomitaFileName));
             string arg = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                                        Path.Combine(Properties.Settings.Default.SourceFolder, "config.proto"));
-
+                                        Path.Combine(Properties.Settings.Default.SourceFolder, "config.proto"));*/
+            
             Process pr = new Process();
-            pr.StartInfo = new ProcessStartInfo("tomitaparser.exe", "config.proto");
+            //pr.StartInfo = new ProcessStartInfo("tomitaparser.exe", "config.proto");
+            pr.StartInfo = startInfo;
             pr.Start();
             pr.WaitForExit();//ожидание завершения
-           
             //удаление лишних файлов
             //File.Delete("first.bin");
             //File.Delete("dic.gzt.bin");
