@@ -10,10 +10,11 @@ namespace LP_2
 {
     class TomitaWrapper
     {
-        static public void FindFact(String inputName, String grammName)
+        public void FindFact(/*String inputName, String grammName*/)
         {
+            //Проблемы с путями не изменять!
 
-            var startInfo = new ProcessStartInfo
+            /*var startInfo = new ProcessStartInfo
             {
                 //имя файла
                 FileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
@@ -43,12 +44,6 @@ namespace LP_2
             startInfo.UserName = null;
             //Process.Start(startInfo);
 
-         /*   string f = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                                        Path.Combine(Properties.Settings.Default.SourceFolder,
-                                                Properties.Settings.Default.TomitaFileName));
-            string arg = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                                        Path.Combine(Properties.Settings.Default.SourceFolder, "config.proto"));*/
-            
             Process pr = new Process();
             //pr.StartInfo = new ProcessStartInfo("tomitaparser.exe", "config.proto");
             pr.StartInfo = startInfo;
@@ -58,6 +53,12 @@ namespace LP_2
             //File.Delete("first.bin");
             //File.Delete("dic.gzt.bin");
             //File.Delete("output.txt");
+            */
+
+            Process pr = new Process();
+            pr.StartInfo = new ProcessStartInfo("tomitaparser.exe", "config.proto");
+            pr.Start();
+            pr.WaitForExit();
 
         }
     }
