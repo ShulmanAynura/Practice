@@ -22,7 +22,7 @@ namespace LP_2
                                                     
                 
                 //скрытое окно
-                //WindowStyle = ProcessWindowStyle.Hidden,
+                WindowStyle = ProcessWindowStyle.Hidden,
                 //ваши аргументы
                 Arguments = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                         Path.Combine(Properties.Settings.Default.SourceFolder, "config.proto"))

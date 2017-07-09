@@ -22,11 +22,12 @@ namespace LP_2
         private void button1_Click(object sender, EventArgs e)
         {
             //TomitaWrapper t = new TomitaWrapper();
-            //t.FindFact();          
+            //t.FindFact();  
+            
             if ((toolStripComboBox1.SelectedIndex>-1)&& (toolStripComboBox2.SelectedIndex > -1))
                 TomitaWrapper.FindFact(toolStripComboBox1.Text, toolStripComboBox2.Text);
 
-            richTextBox1.Clear();
+            rtbOut.Clear();
             //string fileName = Path.Combine(Properties.Settings.Default.SourceFolder, "output.txt");
             String Folder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                        Properties.Settings.Default.SourceFolder);
@@ -36,19 +37,20 @@ namespace LP_2
                 {
                     var sr = new StreamReader(fileName, Encoding.UTF8);
                     string text = sr.ReadToEnd();
-                    richTextBox1.Clear();
-                    richTextBox1.AppendText(text);
+                    rtbOut.Clear();
+                    rtbOut.AppendText(text);
                     sr.Close();
                 }
             }
+
             {
                 string fileName = Path.Combine(Folder, "input.txt");
                 if (File.Exists(fileName))
                 {
                     var sr = new StreamReader(fileName, Encoding.UTF8);
                     string text = sr.ReadToEnd();
-                    richTextBox2.Clear();
-                    richTextBox2.AppendText(text);
+                    rtbIn.Clear();
+                    rtbIn.AppendText(text);
                     sr.Close();
                 }
             }
@@ -57,15 +59,15 @@ namespace LP_2
         private void Form1_Resize(object sender, EventArgs e)
         {
 
-            richTextBox1.Width = Form1.ActiveForm.Width / 2-15;
-            richTextBox2.Width = Form1.ActiveForm.Width / 2-15;
+            rtbOut.Width = Form1.ActiveForm.Width / 2-15;
+            rtbIn.Width = Form1.ActiveForm.Width / 2-15;
           
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            richTextBox1.Width = Form1.ActiveForm.Width / 2 - 15;
-            richTextBox2.Width = Form1.ActiveForm.Width / 2 - 15;
+            rtbOut.Width = Form1.ActiveForm.Width / 2 - 15;
+            rtbIn.Width = Form1.ActiveForm.Width / 2 - 15;
         }
 
 
