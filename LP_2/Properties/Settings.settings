@@ -2,11 +2,20 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LP_2.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="TomitaFileName" Type="System.String" Scope="User">
+    <Setting Name="TomitaExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">tomitaparser.exe</Value>
     </Setting>
-    <Setting Name="SourceFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">../../Tomita</Value>
+    <Setting Name="FileGrammName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">first.cxx</Value>
+    </Setting>
+    <Setting Name="FileFactName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fact_types.proto</Value>
+    </Setting>
+    <Setting Name="FileConfigName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">config.proto</Value>
+    </Setting>
+    <Setting Name="FileDictionaryName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dic.gzt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

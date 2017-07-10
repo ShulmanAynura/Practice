@@ -17,9 +17,9 @@ namespace LP_2
         {
             InitializeComponent();
 
-            if (File.Exists("first.cxx"))
+            if (File.Exists(Properties.Settings.Default.FileGrammName))
             {
-                StreamReader srGramm = new StreamReader("first.cxx", Encoding.UTF8);
+                StreamReader srGramm = new StreamReader(Properties.Settings.Default.FileGrammName, Encoding.UTF8);
                 rtbGramm.Clear();
                 rtbGramm.Text = srGramm.ReadToEnd();
                 srGramm.Close();
@@ -29,9 +29,9 @@ namespace LP_2
                 MessageBox.Show("Исходный файл с грамматиками не обнаружен, откройте файл грамматики или создайте новый", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (File.Exists("fact_types.proto"))
+            if (File.Exists(Properties.Settings.Default.FileFactName))
             {
-                StreamReader srFact = new StreamReader("fact_types.proto", Encoding.UTF8);
+                StreamReader srFact = new StreamReader(Properties.Settings.Default.FileFactName, Encoding.UTF8);
                 rtbFact.Clear();
                 rtbFact.Text = srFact.ReadToEnd();
                 srFact.Close();
@@ -43,24 +43,24 @@ namespace LP_2
 
 
             //если нет необходимых файлов (разобраться потом!)
-            if (!File.Exists("dic.gzt"))
+            if (!File.Exists(Properties.Settings.Default.FileDictionaryName))
             {
                 string dic= "encoding \"utf8\"; \r\n import \"base.proto\";\r\n import \"articles_base.proto\";\r\n import \"fact_types.proto\";\r\nTAuxDicArticle \"Грамматика\"\r\n{key ={ \"tomita:first.cxx\" type = CUSTOM}}";
-                File.WriteAllText("dic.gzt", dic, Encoding.UTF8);
+                File.WriteAllText(Properties.Settings.Default.FileDictionaryName, dic, Encoding.UTF8);
             }
 
-            if (!File.Exists("config.proto"))
+            if (!File.Exists(Properties.Settings.Default.FileConfigName))
             {
                 string config = "encoding \"utf8\";\r\nTTextMinerConfig\r\n{Dictionary = \"dic.gzt\";\r\nInput = { File = \"input.txt\"}\r\nOutput = { File = \"output.txt\" Format = text}\r\nArticles =[{ Name = \"Грамматика\" }]\r\nFacts =[{ Name = \"Fact\" }]}";
-                File.WriteAllText("config.proto", config, Encoding.UTF8);
+                File.WriteAllText(Properties.Settings.Default.FileConfigName, config, Encoding.UTF8);
             }
         }
 
         //сохранение изменений
         private void SaveChanges_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("first.cxx", rtbGramm.Text, Encoding.UTF8);
-            File.WriteAllText("fact_types.proto", rtbFact.Text, Encoding.UTF8);
+            File.WriteAllText(Properties.Settings.Default.FileGrammName, rtbGramm.Text, Encoding.UTF8);
+            File.WriteAllText(Properties.Settings.Default.FileFactName, rtbFact.Text, Encoding.UTF8);
             Close();
         }
 
