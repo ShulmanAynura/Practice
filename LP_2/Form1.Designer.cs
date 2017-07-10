@@ -33,13 +33,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rtbIn = new System.Windows.Forms.RichTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Settings = new System.Windows.Forms.ToolStripMenuItem();
-            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Settings = new System.Windows.Forms.ToolStripMenuItem();
+            this.rtbIn = new System.Windows.Forms.RichTextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -47,9 +47,9 @@
             this.button1.BackColor = System.Drawing.Color.Thistle;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(314, 0);
+            this.button1.Location = new System.Drawing.Point(678, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 25);
+            this.button1.Size = new System.Drawing.Size(103, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "Извлечь факты";
             this.button1.UseVisualStyleBackColor = false;
@@ -58,10 +58,10 @@
             // rtbOut
             // 
             this.rtbOut.BackColor = System.Drawing.Color.LavenderBlush;
-            this.rtbOut.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rtbOut.Location = new System.Drawing.Point(227, 49);
+            this.rtbOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbOut.Location = new System.Drawing.Point(395, 44);
             this.rtbOut.Name = "rtbOut";
-            this.rtbOut.Size = new System.Drawing.Size(190, 415);
+            this.rtbOut.Size = new System.Drawing.Size(386, 490);
             this.rtbOut.TabIndex = 1;
             this.rtbOut.Text = "";
             // 
@@ -73,7 +73,7 @@
             this.Settings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(417, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,34 +94,12 @@
             this.OpenToolStripMenuItem.Text = "Открыть";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
-            // rtbIn
+            // SaveToolStripMenuItem
             // 
-            this.rtbIn.BackColor = System.Drawing.Color.LavenderBlush;
-            this.rtbIn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rtbIn.Location = new System.Drawing.Point(0, 49);
-            this.rtbIn.Name = "rtbIn";
-            this.rtbIn.Size = new System.Drawing.Size(209, 415);
-            this.rtbIn.TabIndex = 3;
-            this.rtbIn.Text = "";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.MaximumSize = new System.Drawing.Size(0, 25);
-            this.panel1.MinimumSize = new System.Drawing.Size(0, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 25);
-            this.panel1.TabIndex = 4;
-            // 
-            // Settings
-            // 
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(79, 20);
-            this.Settings.Text = "Настройки";
-            this.Settings.Click += new System.EventHandler(this.Settings_Click);
+            this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.SaveToolStripMenuItem.Text = "Сохранить результаты";
+            this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // CloseToolStripMenuItem
             // 
@@ -130,31 +108,54 @@
             this.CloseToolStripMenuItem.Text = "Выход";
             this.CloseToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
-            // SaveToolStripMenuItem
+            // Settings
             // 
-            this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.SaveToolStripMenuItem.Text = "Сохранить результаты";
-            this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(79, 20);
+            this.Settings.Text = "Настройки";
+            this.Settings.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // rtbIn
+            // 
+            this.rtbIn.BackColor = System.Drawing.Color.LavenderBlush;
+            this.rtbIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbIn.Location = new System.Drawing.Point(3, 44);
+            this.rtbIn.Name = "rtbIn";
+            this.rtbIn.Size = new System.Drawing.Size(386, 490);
+            this.rtbIn.TabIndex = 3;
+            this.rtbIn.Text = "";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.rtbIn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.rtbOut, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.727273F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.27273F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 537);
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(417, 464);
-            this.Controls.Add(this.rtbIn);
-            this.Controls.Add(this.rtbOut);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Shown += new System.EventHandler(this.Form1_Shown);
-            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,12 +167,12 @@
         private System.Windows.Forms.RichTextBox rtbOut;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.RichTextBox rtbIn;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Settings;
         private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

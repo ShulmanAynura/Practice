@@ -20,16 +20,30 @@ namespace LP_2
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { 
-
+        {
+            if (!File.Exists("first.cxx") || !File.Exists("fact_types.proto"))
+            {
+                Settings_Click(sender, e);
+            }
             if (rtbIn.Text != null)
             {
                 File.WriteAllText("input.txt", rtbIn.Text, Encoding.UTF8);
                 TomitaWrapper t = new TomitaWrapper();
                 t.FindFact();
+
+                rtbOut.Clear();
+                string fileName = "output.txt";
+                if (File.Exists(fileName))
+                {
+                    var sr = new StreamReader(fileName, Encoding.UTF8);
+                    string text = sr.ReadToEnd();
+                    rtbOut.Clear();
+                    rtbOut.AppendText(text);
+                    sr.Close();
+                }
             }
 
-            rtbOut.Clear();
+            /*rtbOut.Clear();
             //string fileName = Path.Combine(Properties.Settings.Default.SourceFolder, "output.txt");
             //String Folder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
             //                         Properties.Settings.Default.SourceFolder);
@@ -44,10 +58,10 @@ namespace LP_2
                     rtbOut.AppendText(text);
                     sr.Close();
                 }
-            }
+            }*/
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        /*private void Form1_Resize(object sender, EventArgs e)
         {
 
             rtbOut.Width = Form1.ActiveForm.Width / 2-15;
@@ -59,7 +73,7 @@ namespace LP_2
         {
             rtbOut.Width = Form1.ActiveForm.Width / 2 - 15;
             rtbIn.Width = Form1.ActiveForm.Width / 2 - 15;
-        }
+        }*/
 
         //открыть файл (путь указывает пользователь)
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)

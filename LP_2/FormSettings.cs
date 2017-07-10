@@ -43,17 +43,17 @@ namespace LP_2
 
 
             //если нет необходимых файлов (разобраться потом!)
-            /*if (!File.Exists("dic.gzt"))
+            if (!File.Exists("dic.gzt"))
             {
-                string dic= "encoding \"utf8\"; \n import \"base.proto\";\n import \"articles_base.proto\";\n import \"fact_types.proto\";\nTAuxDicArticle \"Грамматика\"\n{key ={ \"tomita:first.cxx\" type = CUSTOM}}";
-                File.WriteAllText("dic.proto", dic, Encoding.UTF8);
+                string dic= "encoding \"utf8\"; \r\n import \"base.proto\";\r\n import \"articles_base.proto\";\r\n import \"fact_types.proto\";\r\nTAuxDicArticle \"Грамматика\"\r\n{key ={ \"tomita:first.cxx\" type = CUSTOM}}";
+                File.WriteAllText("dic.gzt", dic, Encoding.UTF8);
             }
 
             if (!File.Exists("config.proto"))
             {
-                string config = "encoding \"utf8\";\nTTextMinerConfig\n{Dictionary = \"dic.gzt\";\nInput = { File = \"input.txt\"}\nOutput = { File = \"output.txt\" Format = text}\nArticles =[{ Name = \"Грамматика\" }]\n Facts =[{ Name = \"Fact\" }]}";
+                string config = "encoding \"utf8\";\r\nTTextMinerConfig\r\n{Dictionary = \"dic.gzt\";\r\nInput = { File = \"input.txt\"}\r\nOutput = { File = \"output.txt\" Format = text}\r\nArticles =[{ Name = \"Грамматика\" }]\r\nFacts =[{ Name = \"Fact\" }]}";
                 File.WriteAllText("config.proto", config, Encoding.UTF8);
-            }*/
+            }
         }
 
         //сохранение изменений
