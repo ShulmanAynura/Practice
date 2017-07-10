@@ -31,16 +31,21 @@ namespace LP_2
                 TomitaWrapper t = new TomitaWrapper();
                 t.FindFact();
 
-                rtbOut.Clear();
-                string fileName = "output.txt";
-                if (File.Exists(fileName))
-                {
-                    var sr = new StreamReader(fileName, Encoding.UTF8);
-                    string text = sr.ReadToEnd();
-                    rtbOut.Clear();
-                    rtbOut.AppendText(text);
-                    sr.Close();
-                }
+                /* rtbOut.Clear();
+                 string fileName = "output.txt";
+                 if (File.Exists(fileName))
+                 {
+                     var sr = new StreamReader(fileName, Encoding.UTF8);
+                     string text = sr.ReadToEnd();
+                     rtbOut.Clear();
+                     rtbOut.AppendText(text);
+                     sr.Close();
+                 }*/
+                treeView1.Nodes.Clear();
+                /*  foreach(TreeNode node in TreeReader.read("output.txt"))
+                       treeView1.Nodes.Add(node);*/
+                treeView1.Nodes.Add(TreeReader.read("output.txt")[0]);
+                treeView1.ExpandAll();
             }
 
             /*rtbOut.Clear();
@@ -123,10 +128,12 @@ namespace LP_2
             saveFD.RestoreDirectory = true;
 
 
-            if (saveFD.ShowDialog() == DialogResult.OK)
+            /*if (saveFD.ShowDialog() == DialogResult.OK)
             {
                 rtbOut.SaveFile(saveFD.FileName, RichTextBoxStreamType.PlainText);
-            }
+            }*/
         }
+
+       
     }
 }

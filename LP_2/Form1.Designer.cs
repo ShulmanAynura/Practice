@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.rtbOut = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +37,7 @@
             this.Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.rtbIn = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,16 +54,6 @@
             this.button1.Text = "Извлечь факты";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // rtbOut
-            // 
-            this.rtbOut.BackColor = System.Drawing.Color.LavenderBlush;
-            this.rtbOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbOut.Location = new System.Drawing.Point(395, 44);
-            this.rtbOut.Name = "rtbOut";
-            this.rtbOut.Size = new System.Drawing.Size(386, 490);
-            this.rtbOut.TabIndex = 1;
-            this.rtbOut.Text = "";
             // 
             // menuStrip1
             // 
@@ -132,7 +122,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.rtbIn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.rtbOut, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.treeView1, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -141,6 +131,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.27273F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 537);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // treeView1
+            // 
+            this.treeView1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(395, 44);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(386, 490);
+            this.treeView1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -164,7 +163,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox rtbOut;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.RichTextBox rtbIn;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
@@ -173,6 +171,7 @@
         private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 
