@@ -94,9 +94,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tomitaparser.exe">
+    <None Include="tomitaparser.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="first.cxx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

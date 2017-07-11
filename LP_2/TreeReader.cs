@@ -58,6 +58,8 @@ namespace LP_2
                 }
 
             }
+            sr.Close();
+            inFile.Close();
             return result;
         }
     }
