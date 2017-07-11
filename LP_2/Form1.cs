@@ -12,18 +12,27 @@ using System.Windows.Forms;
 
 namespace LP_2
 {
-    public partial class Form1 : Form
+    public partial class FormGeneral : Form
     {
-        public Form1()
+        public FormGeneral()
         {
             InitializeComponent();
+
+            if (File.Exists("input.txt"))
+            {
+                var sr = new StreamReader("input.txt", Encoding.UTF8);
+                string text = sr.ReadToEnd();
+                rtbIn.Clear();
+                rtbIn.AppendText(text);
+                sr.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!File.Exists("first.cxx") || !File.Exists("fact_types.proto"))
+            if (!File.Exists("config.proto") || !File.Exists("dic.gzt"))
             {
-                Settings_Click(sender, e);
+                Settings_Click(sender, e);   
             }
             if (rtbIn.Text != null)
             {
@@ -41,44 +50,14 @@ namespace LP_2
                      rtbOut.AppendText(text);
                      sr.Close();
                  }*/
-                treeView1.Nodes.Clear();
+                treeFact.Nodes.Clear();
                 /*  foreach(TreeNode node in TreeReader.read("output.txt"))
                        treeView1.Nodes.Add(node);*/
-                treeView1.Nodes.Add(TreeReader.read("output.txt")[0]);
-                treeView1.ExpandAll();
+                treeFact.Nodes.Add(TreeReader.read("output.txt")[0]);
+                treeFact.ExpandAll();
             }
 
-            /*rtbOut.Clear();
-            //string fileName = Path.Combine(Properties.Settings.Default.SourceFolder, "output.txt");
-            //String Folder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-            //                         Properties.Settings.Default.SourceFolder);
-            {
-                //string fileName = Path.Combine(Folder,"output.txt");
-                string fileName = "output.txt";
-                if (File.Exists(fileName))
-                {
-                    var sr = new StreamReader(fileName, Encoding.UTF8);
-                    string text = sr.ReadToEnd();
-                    rtbOut.Clear();
-                    rtbOut.AppendText(text);
-                    sr.Close();
-                }
-            }*/
         }
-
-        /*private void Form1_Resize(object sender, EventArgs e)
-        {
-
-            rtbOut.Width = Form1.ActiveForm.Width / 2-15;
-            rtbIn.Width = Form1.ActiveForm.Width / 2-15;
-          
-        }
-
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-            rtbOut.Width = Form1.ActiveForm.Width / 2 - 15;
-            rtbIn.Width = Form1.ActiveForm.Width / 2 - 15;
-        }*/
 
         //открыть файл (путь указывает пользователь)
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,11 +106,23 @@ namespace LP_2
             saveFD.FilterIndex = 2;
             saveFD.RestoreDirectory = true;
 
-
-            /*if (saveFD.ShowDialog() == DialogResult.OK)
+            if (saveFD.ShowDialog() == DialogResult.OK)
             {
-                rtbOut.SaveFile(saveFD.FileName, RichTextBoxStreamType.PlainText);
-            }*/
+                string fact = "";
+                int n = treeFact.Nodes[0].Nodes.Count, n1 = 0;
+
+                for (int i = 0; i < n; i++)
+                {
+                    n1 = treeFact.Nodes[0].Nodes[i].Nodes.Count;
+                    for (int j = 0; j < n1; j++)
+                    {
+                        fact = fact + treeFact.Nodes[0].Nodes[i].Nodes[j].Text;
+                    }
+                    fact = fact + "\r\n";
+                }
+
+                File.WriteAllText(saveFD.FileName, fact, Encoding.UTF8);
+            }
         }
 
        

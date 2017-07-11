@@ -60,6 +60,11 @@ namespace LP_2
             pr.Start();
             pr.WaitForExit();
 
+            //удаление лишних файлов
+            if(File.Exists("first.bin"))
+                File.Delete("first.bin");
+            if (File.Exists("dic.gzt.bin"))
+                File.Delete("dic.gzt.bin");
         }
     }
 }

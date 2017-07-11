@@ -1,6 +1,6 @@
 ﻿namespace LP_2
 {
-    partial class Form1
+    partial class FormGeneral
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -37,14 +37,14 @@
             this.Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.rtbIn = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeFact = new System.Windows.Forms.TreeView();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Thistle;
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(678, 3);
@@ -57,7 +57,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Thistle;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.Settings});
@@ -107,8 +107,9 @@
             // 
             // rtbIn
             // 
-            this.rtbIn.BackColor = System.Drawing.Color.LavenderBlush;
+            this.rtbIn.BackColor = System.Drawing.SystemColors.Window;
             this.rtbIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rtbIn.Location = new System.Drawing.Point(3, 44);
             this.rtbIn.Name = "rtbIn";
             this.rtbIn.Size = new System.Drawing.Size(386, 490);
@@ -122,7 +123,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.rtbIn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.treeView1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.treeFact, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -132,16 +133,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 537);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // treeView1
+            // treeFact
             // 
-            this.treeView1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(395, 44);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(386, 490);
-            this.treeView1.TabIndex = 4;
+            this.treeFact.BackColor = System.Drawing.SystemColors.Window;
+            this.treeFact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeFact.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.treeFact.Location = new System.Drawing.Point(395, 44);
+            this.treeFact.Name = "treeFact";
+            this.treeFact.Size = new System.Drawing.Size(386, 490);
+            this.treeFact.TabIndex = 4;
             // 
-            // Form1
+            // FormGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,8 +152,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormGeneral";
+            this.Text = "Find your fact";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -171,7 +173,7 @@
         private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeFact;
     }
 }
 

@@ -53,6 +53,7 @@
             // rtbGramm
             // 
             this.rtbGramm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbGramm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rtbGramm.Location = new System.Drawing.Point(3, 27);
             this.rtbGramm.Name = "rtbGramm";
             this.rtbGramm.Size = new System.Drawing.Size(386, 468);
@@ -62,6 +63,7 @@
             // rtbFact
             // 
             this.rtbFact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbFact.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rtbFact.Location = new System.Drawing.Point(395, 27);
             this.rtbFact.Name = "rtbFact";
             this.rtbFact.Size = new System.Drawing.Size(386, 468);
