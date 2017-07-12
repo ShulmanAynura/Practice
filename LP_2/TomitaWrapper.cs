@@ -10,6 +10,15 @@ namespace LP_2
 {
     class TomitaWrapper
     {
+        private string _configFileName;
+
+        public string ConfigFileName
+        {
+            get { return _configFileName; }
+            set { _configFileName = value; }
+        }
+        
+
         public void FindFact(/*String inputName, String grammName*/)
         {
             //Проблемы с путями не изменять!
@@ -56,7 +65,7 @@ namespace LP_2
             */
 
             Process pr = new Process();
-            pr.StartInfo = new ProcessStartInfo("tomitaparser.exe", "config.proto");
+            pr.StartInfo = new ProcessStartInfo("tomitaparser.exe", _configFileName);
             pr.Start();
             pr.WaitForExit();
 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.bFindFact = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,18 +42,18 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // bFindFact
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(678, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Извлечь факты";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bFindFact.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bFindFact.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bFindFact.ForeColor = System.Drawing.Color.Black;
+            this.bFindFact.Location = new System.Drawing.Point(678, 3);
+            this.bFindFact.Name = "bFindFact";
+            this.bFindFact.Size = new System.Drawing.Size(103, 35);
+            this.bFindFact.TabIndex = 0;
+            this.bFindFact.Text = "Извлечь факты";
+            this.bFindFact.UseVisualStyleBackColor = false;
+            this.bFindFact.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -122,7 +122,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.rtbIn, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bFindFact, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.treeFact, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
@@ -164,7 +164,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bFindFact;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.RichTextBox rtbIn;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;

@@ -37,26 +37,17 @@ namespace LP_2
             if (rtbIn.Text != null)
             {
                 File.WriteAllText("input.txt", rtbIn.Text, Encoding.UTF8);
-                TomitaWrapper t = new TomitaWrapper();
+                TomitaWrapper t = TomitaSimpleFabrica.Get(Properties.Settings.Default.FileConfigName);
                 t.FindFact();
 
-                /* rtbOut.Clear();
-                 string fileName = "output.txt";
-                 if (File.Exists(fileName))
-                 {
-                     var sr = new StreamReader(fileName, Encoding.UTF8);
-                     string text = sr.ReadToEnd();
-                     rtbOut.Clear();
-                     rtbOut.AppendText(text);
-                     sr.Close();
-                 }*/
                 treeFact.Nodes.Clear();
-                /*  foreach(TreeNode node in TreeReader.read("output.txt"))
-                       treeView1.Nodes.Add(node);*/
                 treeFact.Nodes.Add(TreeReader.read("output.txt")[0]);
                 treeFact.ExpandAll();
             }
-
+            else
+            {
+                MessageBox.Show("Исходный текст отсутствует", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         //открыть файл (путь указывает пользователь)

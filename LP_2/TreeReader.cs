@@ -21,7 +21,6 @@ namespace LP_2
             TreeNode fact = new TreeNode();
             bool flagFact = false;
             bool flagOpen = false;
-            bool flagClose = false;
             while (!sr.EndOfStream)
             {
                 String line = sr.ReadLine().Trim();
